@@ -349,6 +349,66 @@ main:focus { outline: none; }
   background: none;
 }
 
+/* Hero: badge Version Demo + คำโปรย */
+.hero-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.hero-badge-demo {
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px;
+  background: rgba(255, 255, 255, .10); border: 1px solid rgba(255, 255, 255, .30);
+  color: #fff; font-size: 12px; font-weight: 600; letter-spacing: .04em;
+}
+.hero-badge-demo > i { color: var(--cyan-light); }
+.hero-badge-note { font-size: 12.5px; font-weight: 300; color: rgba(255, 255, 255, .66); }
+.hero-tagline { margin-top: 12px; font-size: clamp(17px, 2vw, 21px); font-weight: 500; line-height: 1.5; color: var(--cyan-light); }
+.hero-tagline + .hero-lead { margin-top: 8px; }
+
+/* Section: เกี่ยวกับระบบ */
+.about-intro { max-width: 60em; font-size: 16px; line-height: 1.85; color: var(--ink-2); }
+.about-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.about-card { padding: 22px; box-shadow: var(--shadow); }
+.about-icon {
+  display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 14px;
+  border-radius: 12px; background: var(--cat-a-soft); color: var(--blue); font-size: 22px;
+}
+.about-card:nth-child(2) .about-icon { background: var(--cat-c-soft); color: var(--cat-c-ink); }
+.about-card:nth-child(3) .about-icon { background: var(--cat-b-soft); color: var(--green); }
+.about-card h3 { font-size: 17px; font-weight: 600; }
+.about-card p { margin-top: 6px; font-size: 14.5px; line-height: 1.7; color: var(--muted); }
+.about-note {
+  display: flex; align-items: flex-start; gap: 10px; margin-top: 18px; padding: 12px 16px;
+  border-radius: var(--radius-sm); background: var(--soft); border: 1px solid var(--line);
+  font-size: 14px; line-height: 1.7; color: var(--ink-2);
+}
+.about-note > i { margin-top: 3px; color: var(--blue); }
+
+/* Section: ข้อสงวนสิทธิ์ (Info card สีสุภาพ) */
+.section-notice { padding: 40px 0 48px; }
+.notice-card {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px;
+  padding: 24px 26px; border-radius: var(--radius);
+  background: #F3F7FE; border: 1px solid #D6E4FA; border-left: 4px solid var(--blue);
+  box-shadow: var(--shadow-sm);
+}
+.notice-icon {
+  display: grid; place-items: center; width: 44px; height: 44px;
+  border-radius: 12px; background: #fff; border: 1px solid #D6E4FA; color: var(--blue); font-size: 22px;
+}
+.notice-body h2 { font-size: clamp(19px, 2.2vw, 22px); font-weight: 600; color: var(--navy); }
+.notice-body p { margin-top: 10px; font-size: 14.5px; line-height: 1.8; color: var(--ink-2); max-width: 70em; }
+.notice-foot {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px;
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid #D6E4FA;
+}
+.notice-foot .notice-contact { display: flex; align-items: flex-start; gap: 8px; margin-top: 0; }
+.notice-contact > i { margin-top: 3px; color: var(--blue); }
+.notice-contact a, .notice-source { color: var(--blue); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.notice-source { display: inline-flex; align-items: center; gap: 6px; min-height: 24px; font-size: 14.5px; }
+.notice-contact a:hover, .notice-source:hover { color: var(--blue-dark); }
+@media (max-width: 860px) { .about-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 767px) {
+  .notice-card { grid-template-columns: minmax(0, 1fr); padding: 20px 18px; }
+  .about-intro { font-size: 15px; }
+}
+
 /* แหล่งอ้างอิง + ดาวน์โหลดประกาศฉบับเต็ม */
 .hero-source {
   display: flex; align-items: center; gap: 14px;
