@@ -341,6 +341,14 @@ main:focus { outline: none; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .hero-lead { margin-top: 14px; max-width: 40em; font-size: clamp(15px, 1.6vw, 18px); font-weight: 300; color: rgba(255, 255, 255, .8); }
+/* ป้าย (version web-dashboard demo) ต่อท้าย สปสช.ปี2569 */
+.hero-title .hero-tag {
+  display: inline-block; margin-left: 10px; vertical-align: middle;
+  font-size: max(14px, .34em); font-weight: 400; letter-spacing: .01em; line-height: 1.3;
+  color: rgba(255, 255, 255, .78); -webkit-text-fill-color: rgba(255, 255, 255, .78);
+  background: none;
+}
+
 /* แหล่งอ้างอิง + ดาวน์โหลดประกาศฉบับเต็ม */
 .hero-source {
   display: flex; align-items: center; gap: 14px;
@@ -372,6 +380,7 @@ main:focus { outline: none; }
 .hero-source-btn:hover { transform: translateY(-1px); background: #ECFEFF; box-shadow: 0 10px 24px rgba(0, 0, 0, .3); }
 .hero-source-btn:focus-visible { outline: 3px solid var(--cyan-light); outline-offset: 2px; }
 @media (max-width: 767px) {
+  .hero-title .hero-tag { display: block; margin: 2px 0 0; }
   .hero-source { flex-wrap: wrap; }
   .hero-source-text { flex-basis: calc(100% - 54px); }
   .hero-source-btn { width: 100%; justify-content: center; }
