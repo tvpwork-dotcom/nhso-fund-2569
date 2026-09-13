@@ -43,9 +43,24 @@
       <div class="source-docs">
         ${(meta.sources || []).map((s) => {
           const isPdf = /\.pdf$/i.test(s.file);
+          const pdfUrl = isPdf ? (CFG.SOURCE && CFG.SOURCE.PDF_DOWNLOAD_URL) : "";
+          const pdfSize = (CFG.SOURCE && CFG.SOURCE.PDF_SIZE) || "";
+          const title = isPdf ? ((CFG.SOURCE && CFG.SOURCE.PDF_TITLE) || s.file) : s.file;
+          /* PDF: ทำเป็น "ข้อความรูปภาพ" (ภาพเอกสาร + ชื่อประกาศ) ทั้งก้อนคลิกเพื่อดาวน์โหลด */
+          const head = pdfUrl ? `
+              <a class="source-doc-link" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener"
+                 aria-label="ดาวน์โหลด ${escapeHtml(title)} (PDF${pdfSize ? ` ${escapeHtml(pdfSize)}` : ""})">
+                <span class="doc-art" aria-hidden="true"><span class="doc-art-page"><i class="bi bi-file-earmark-text"></i><b>PDF</b></span></span>
+                <span class="doc-link-text">
+                  <span class="doc-link-label">ประกาศฉบับเต็ม</span>
+                  <strong>${escapeHtml(title)}</strong>
+                  <span class="doc-link-cta"><i class="bi bi-download" aria-hidden="true"></i> คลิกเพื่อดาวน์โหลด${pdfSize ? ` · PDF ${escapeHtml(pdfSize)}` : ""}</span>
+                </span>
+              </a>`
+            : `<h3><i class="bi ${isPdf ? "bi-file-earmark-pdf" : "bi-file-earmark-spreadsheet"}" aria-hidden="true"></i> ${escapeHtml(title)}</h3>`;
           return `
             <article class="card source-doc">
-              <h3><i class="bi ${isPdf ? "bi-file-earmark-pdf" : "bi-file-earmark-spreadsheet"}" aria-hidden="true"></i> ${escapeHtml(s.file)}</h3>
+              ${head}
               ${s.sheet ? `<p>ชีต ${escapeHtml(s.sheet)} · ${fmt(meta.record_count || 0)} Record</p>` : ""}
               ${isPdf ? `<p>${fmt(s.pages || 0)} หน้า · อ่านได้ ${fmt(classes.clean_thai || 0)} · ตาราง/อังกฤษ ${fmt(classes.english_table || 0)} · ภาษาไทยอ่านไม่ได้ ${fmt(classes.garbled_thai || 0)} · เป็นภาพ ${fmt(classes.image || 0)}</p>` : ""}
               ${s.note ? `<p class="mini-label">${escapeHtml(s.note)}</p>` : ""}

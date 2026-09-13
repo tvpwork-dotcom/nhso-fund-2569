@@ -24,7 +24,7 @@
     SYSTEM_NAME: "หลักเกณฑ์กองทุน สปสช.ปี2569",
     SYSTEM_SUBTITLE: "แนวทางศึกษาสิทธิประโยชน์ เงื่อนไขการเบิกจ่าย และโอกาสการ Claim รายได้",
     FOOTER_TEXT: "พัฒนาโดย ศูนย์รายได้ โรงพยาบาลแม่สะเรียง",
-    VERSION: "version_2609132301", // version_yymmddhhnn
+    VERSION: "version_2609132319", // version_yymmddhhnn
     CURRENT_PHASE: 5,
 
     /*
@@ -79,7 +79,11 @@
       SUMMARY_SHEET: "Executive_Summary",
       DOCUMENT: "ประกาศสำนักงานหลักประกันสุขภาพแห่งชาติ: รวมประกาศการจ่ายฯ 76 ฉบับ",
       UPDATED: "1 มีนาคม 2569",
-      PAGES: 943
+      PAGES: 943,
+      /* ไฟล์ PDF ฉบับเต็ม 53.6 MB ฝากไว้ Google Drive (เกินลิมิตอัปโหลด GitHub) — ใช้ในหน้าแหล่งอ้างอิง */
+      PDF_DOWNLOAD_URL: "https://drive.google.com/uc?export=download&id=1sJ3sqWKZH1ssiMA5B3_nw9-oNSoSafwD",
+      PDF_SIZE: "53.6 MB",
+      PDF_TITLE: "ประกาศสำนักงานหลักประกันสุขภาพแห่งชาติ เกี่ยวกับหลักเกณฑ์และเงื่อนไขการจ่ายบริการสาธารณสุขภายใต้งบกองทุนหลักประกันสุขภาพแห่งชาติ ปี 2569"
     },
 
     DISCLAIMER:
