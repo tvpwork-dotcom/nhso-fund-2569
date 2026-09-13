@@ -123,9 +123,14 @@
       <div class="hero">
         <div class="container hero-inner">
           <div class="hero-copy">
-            <span class="hero-badge"><i class="bi bi-shield-check" aria-hidden="true"></i> NHSO REVENUE MASTER 2569</span>
-            <h1 class="hero-title">หลักเกณฑ์กองทุน<span>สปสช.ปี2569 <small class="hero-tag">(version web-dashboard demo)</small></span></h1>
-            <p class="hero-lead">แนวทางศึกษาสิทธิประโยชน์ เงื่อนไขการเบิกจ่าย และโอกาสการ Claim รายได้</p>
+            <div class="hero-badges">
+              <span class="hero-badge"><i class="bi bi-shield-check" aria-hidden="true"></i> NHSO REVENUE MASTER 2569</span>
+              <span class="hero-badge-demo"><i class="bi bi-tools" aria-hidden="true"></i> Version Demo</span>
+              <span class="hero-badge-note">อยู่ระหว่างการพัฒนาและปรับปรุงข้อมูล</span>
+            </div>
+            <h1 class="hero-title">หลักเกณฑ์กองทุน<span>สปสช. ปี 2569</span></h1>
+            <p class="hero-tagline">เรียนรู้ เข้าใจ และนำไปใช้ เพื่อพัฒนาการจัดเก็บรายได้อย่างเป็นระบบ</p>
+            <p class="hero-lead">รวบรวมหลักเกณฑ์ เงื่อนไข และแนวทางการจ่ายค่าบริการ เพื่อสนับสนุนการเรียนรู้และการพัฒนาระบบจัดเก็บรายได้ของหน่วยบริการ</p>
 
             <div class="hero-source">
               <span class="hero-source-icon" aria-hidden="true"><i class="bi bi-journal-text"></i></span>
@@ -147,11 +152,9 @@
               <li class="is-final"><i class="bi bi-check2-circle" aria-hidden="true"></i>Claim ได้อย่างถูกต้อง</li>
             </ul>
 
-            <p class="hero-quote">“จากประกาศ <strong data-bind="announcements">76</strong> ฉบับ<br>สู่แผนที่รายได้ของโรงพยาบาล”</p>
-
             <div class="hero-cta">
-              <button class="btn btn-primary" type="button" data-scroll-to="abc-overview"><i class="bi bi-diagram-3" aria-hidden="true"></i> สำรวจโครงสร้างกองทุน</button>
-              <button class="btn btn-ghost" type="button" data-focus-search><i class="bi bi-search" aria-hidden="true"></i> ค้นหารายการ Claim</button>
+              <button class="btn btn-primary" type="button" data-scroll-to="about-system"><i class="bi bi-book-half" aria-hidden="true"></i> เริ่มศึกษา</button>
+              <a class="btn btn-ghost" href="#/sources"><i class="bi bi-journal-bookmark" aria-hidden="true"></i> แหล่งอ้างอิง</a>
             </div>
           </div>
 
@@ -164,6 +167,40 @@
           </div>
         </div>
       </div>
+
+      <!-- ABOUT: เกี่ยวกับระบบ -->
+      <section class="section section-alt" id="about-system" aria-labelledby="aboutTitle">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">About the System</p>
+              <h2 id="aboutTitle">เกี่ยวกับระบบ</h2>
+            </div>
+          </div>
+
+          <p class="about-intro">Web Dashboard Demo หลักเกณฑ์กองทุน สปสช. ปี 2569 จัดทำขึ้นเพื่อรวบรวม จัดหมวดหมู่ และนำเสนอข้อมูลที่เกี่ยวข้องกับหลักเกณฑ์กองทุนของสำนักงานหลักประกันสุขภาพแห่งชาติ (สปสช.) ให้สามารถศึกษา ค้นหา และทำความเข้าใจได้สะดวกยิ่งขึ้น</p>
+
+          <div class="about-grid">
+            <article class="card about-card">
+              <span class="about-icon" aria-hidden="true"><i class="bi bi-book"></i></span>
+              <h3>ศึกษาหลักเกณฑ์</h3>
+              <p>สนับสนุนการเรียนรู้หลักเกณฑ์ เงื่อนไข และแนวทางการจ่ายค่าบริการของกองทุน</p>
+            </article>
+            <article class="card about-card">
+              <span class="about-icon" aria-hidden="true"><i class="bi bi-clipboard2-check"></i></span>
+              <h3>สนับสนุนการตรวจสอบ</h3>
+              <p>ใช้ประกอบการตรวจสอบให้มีความถูกต้อง ครบถ้วน และสอดคล้องกับเงื่อนไขของกองทุน</p>
+            </article>
+            <article class="card about-card">
+              <span class="about-icon" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i></span>
+              <h3>พัฒนาการจัดเก็บรายได้</h3>
+              <p>ใช้เป็นข้อมูลประกอบการพัฒนาระบบจัดเก็บรายได้ของหน่วยบริการ ให้ถูกต้อง ครบถ้วน และทันเวลา</p>
+            </article>
+          </div>
+
+          <p class="about-note"><i class="bi bi-hourglass-split" aria-hidden="true"></i><span>ปัจจุบันระบบยังอยู่ระหว่างการพัฒนาและปรับปรุง โดยยังมีรายละเอียดบางส่วนที่จำเป็นต้องเพิ่มเติม ตรวจสอบ และปรับให้เหมาะสมยิ่งขึ้น</span></p>
+        </div>
+      </section>
 
       <!-- EXECUTIVE KPI -->
       <section class="section" id="executive-kpi" aria-labelledby="kpiTitle">
@@ -303,6 +340,26 @@
             <li>รับเงินครบ</li>
             <li class="is-final">ลด Revenue Leakage</li>
           </ol>
+        </div>
+      </section>
+
+      <!-- DISCLAIMER: ข้อสงวนสิทธิ์ (ก่อน Footer) -->
+      <section class="section section-notice" id="disclaimer" aria-labelledby="disclaimerTitle">
+        <div class="container">
+          <div class="notice-card" role="note">
+            <span class="notice-icon" aria-hidden="true"><i class="bi bi-info-circle"></i></span>
+            <div class="notice-body">
+              <h2 id="disclaimerTitle">ข้อสงวนสิทธิ์และคำชี้แจงการใช้งาน</h2>
+              <p>เว็บไซต์นี้จัดทำขึ้นเพื่อวัตถุประสงค์ด้านการศึกษา การเรียนรู้ การรวบรวมข้อมูล และการสนับสนุนการพัฒนาระบบจัดเก็บรายได้ของหน่วยบริการเท่านั้น</p>
+              <p>เนื้อหาภายในระบบอยู่ระหว่างการพัฒนาและปรับปรุง อาจมีข้อมูลบางส่วนที่ยังไม่ครบถ้วน หรืออาจมีการเปลี่ยนแปลงตามประกาศ หลักเกณฑ์ เงื่อนไข และแนวทางปฏิบัติของสำนักงานหลักประกันสุขภาพแห่งชาติ (สปสช.)</p>
+              <p>ก่อนนำข้อมูลไปใช้ในการปฏิบัติงานจริง ควรตรวจสอบกับประกาศ คู่มือ หนังสือสั่งการ หรือแหล่งข้อมูลอย่างเป็นทางการของ สปสช. อีกครั้ง</p>
+              <p>ผู้พัฒนาระบบไม่รับรองว่าข้อมูลทั้งหมดจะถูกต้องหรือเป็นปัจจุบันในทุกกรณี และไม่รับผิดชอบต่อความเสียหายที่อาจเกิดขึ้นจากการนำข้อมูลใน Version Demo ไปใช้โดยไม่ได้ตรวจสอบกับเอกสารทางการ</p>
+              <div class="notice-foot">
+                <p class="notice-contact"><i class="bi bi-envelope" aria-hidden="true"></i><span>หากพบข้อผิดพลาดหรือมีข้อเสนอแนะ สามารถแจ้งได้ที่ E-mail: <a href="mailto:tvpworkt@gmail.com">tvpworkt@gmail.com</a></span></p>
+                <a class="notice-source" href="#/sources"><i class="bi bi-journal-bookmark" aria-hidden="true"></i> ตรวจสอบเอกสารต้นฉบับได้ที่หน้าแหล่งอ้างอิง <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </section>
