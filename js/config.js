@@ -24,7 +24,7 @@
     SYSTEM_NAME: "หลักเกณฑ์กองทุน สปสช.ปี2569",
     SYSTEM_SUBTITLE: "แนวทางศึกษาสิทธิประโยชน์ เงื่อนไขการเบิกจ่าย และโอกาสการ Claim รายได้",
     FOOTER_TEXT: "พัฒนาโดย ศูนย์รายได้ โรงพยาบาลแม่สะเรียง",
-    VERSION: "version_2609132145", // version_yymmddhhnn
+    VERSION: "version_2609132156", // version_yymmddhhnn
     CURRENT_PHASE: 5,
 
     /*
