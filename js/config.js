@@ -1,6 +1,6 @@
 /* =========================================================
  * config.js — ค่าตั้งค่าระบบ (Public · Read-only)
- * ประกาศบริหารกองทุน ปีงบประมาณ พ.ศ.2569
+ * หลักเกณฑ์กองทุน สปสช.ปี2569
  *
  * ⚠ ไฟล์นี้เผยแพร่บน GitHub Pages — ห้ามใส่ข้อมูลลับ
  *   (password, client_secret, API_SECRET, DB password)
@@ -21,10 +21,10 @@
   }
 
   window.APP_CONFIG = deepFreeze({
-    SYSTEM_NAME: "ประกาศบริหารกองทุน ปีงบประมาณ พ.ศ.2569",
+    SYSTEM_NAME: "หลักเกณฑ์กองทุน สปสช.ปี2569",
     SYSTEM_SUBTITLE: "แนวทางศึกษาสิทธิประโยชน์ เงื่อนไขการเบิกจ่าย และโอกาสการ Claim รายได้",
     FOOTER_TEXT: "พัฒนาโดย ศูนย์รายได้ โรงพยาบาลแม่สะเรียง",
-    VERSION: "version_2609132045", // version_yymmddhhnn
+    VERSION: "version_2609132145", // version_yymmddhhnn
     CURRENT_PHASE: 5,
 
     /*
