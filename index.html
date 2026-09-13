@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ประกาศบริหารกองทุน ปีงบประมาณ พ.ศ.2569</title>
+  <meta name="description" content="แนวทางศึกษาสิทธิประโยชน์ เงื่อนไขการเบิกจ่าย และโอกาสการ Claim รายได้ — NHSO Revenue Master 2569 · ศูนย์รายได้ โรงพยาบาลแม่สะเรียง">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F3A'/%3E%3Cpath d='M27 14h10v13h13v10H37v13H27V37H14V27h13z' fill='%2306B6D4'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Prompt -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Chart.js -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- App core (Phase 1) -->
+  <script defer src="./js/config.js"></script>
+  <script defer src="./js/app.js"></script>
+
+  <!-- Phase 5: error handling + UX (ต้องโหลดหลัง app.js) -->
+  <script defer src="./js/ux.js"></script>
+
+  <!-- Phase 2 modules (ต้องโหลดหลัง app.js) -->
+  <script defer src="./js/dashboard.js"></script>
+  <script defer src="./js/drilldown.js"></script>
+  <script defer src="./js/search.js"></script>
+  <script defer src="./js/filters.js"></script>
+
+  <!-- Phase 3 modules -->
+  <script defer src="./js/detail.js"></script>
+  <script defer src="./js/catalog.js"></script>
+  <script defer src="./js/codes.js"></script>
+  <script defer src="./js/payment.js"></script>
+  <script defer src="./js/claim-system.js"></script>
+
+  <!-- Phase 4 modules -->
+  <script defer src="./js/owners.js"></script>
+  <script defer src="./js/readiness.js"></script>
+  <script defer src="./js/insight.js"></script>
+  <script defer src="./js/sources.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-skip>ข้ามไปยังเนื้อหาหลัก</a>
+  <noscript><div class="noscript">ระบบนี้ต้องเปิดใช้งาน JavaScript</div></noscript>
+
+  <!-- ================= TOP: Header + Tabs ================= -->
+  <div class="app-top" id="appTop">
+    <header class="app-header">
+      <div class="container header-inner">
+        <a class="brand" href="#/overview" aria-label="ประกาศบริหารกองทุน ปีงบประมาณ พ.ศ.2569 — กลับหน้าภาพรวม">
+          <span class="brand-mark" id="brandMark" aria-hidden="true"><i class="bi bi-hospital"></i></span>
+          <span class="brand-text">
+            <span class="brand-title">ประกาศบริหารกองทุน <span class="brand-year">ปีงบประมาณ พ.ศ.2569</span></span>
+            <span class="brand-sub">แนวทางศึกษาสิทธิประโยชน์ เงื่อนไขการเบิกจ่าย และโอกาสการ Claim รายได้</span>
+          </span>
+        </a>
+
+        <form class="header-search" role="search" data-search-form>
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <input type="search" name="q" placeholder="ค้นหา Program, โรค, ICD, รหัสบริการ, หน่วยงาน…" aria-label="ค้นหาทั้งระบบ" autocomplete="off" enterkeyhint="search">
+          <kbd aria-hidden="true">/</kbd>
+        </form>
+
+        <button class="icon-btn" type="button" data-focus-search aria-label="ค้นหา"><i class="bi bi-search"></i></button>
+        <button class="icon-btn" type="button" data-drawer-open aria-label="เปิดเมนู" aria-controls="drawer" aria-expanded="false"><i class="bi bi-list"></i></button>
+      </div>
+    </header>
+
+    <nav class="tabbar" aria-label="เมนูหลัก">
+      <div class="container">
+        <ul class="tabs" id="tabList"></ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ================= Drawer (มือถือ) ================= -->
+  <aside class="drawer" id="drawer" aria-label="เมนู" aria-hidden="true" inert>
+    <div class="drawer-head">
+      <strong>เมนูหลัก</strong>
+      <button class="icon-btn icon-btn-plain" type="button" data-drawer-close aria-label="ปิดเมนู"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <form class="drawer-search" role="search" data-search-form>
+      <i class="bi bi-search" aria-hidden="true"></i>
+      <input type="search" name="q" placeholder="ค้นหาทั้งระบบ…" aria-label="ค้นหาทั้งระบบ" autocomplete="off" enterkeyhint="search">
+    </form>
+    <nav class="drawer-body" aria-label="เมนูหลัก (มือถือ)">
+      <ul id="drawerList"></ul>
+    </nav>
+    <div class="drawer-foot"><span data-bind="version"></span></div>
+  </aside>
+  <div class="overlay" id="overlay" data-drawer-close hidden></div>
+
+  <!-- ================= Breadcrumb ================= -->
+  <div class="crumbbar">
+    <div class="container">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb" id="breadcrumb"></ol></nav>
+    </div>
+  </div>
+
+  <!-- ================= MAIN ================= -->
+  <main id="main" tabindex="-1">
+
+    <!-- ===== VIEW: ภาพรวม ===== -->
+    <section class="view" id="view-overview" data-view="overview">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="hero-badge"><i class="bi bi-shield-check" aria-hidden="true"></i> NHSO REVENUE MASTER 2569</span>
+            <h1 class="hero-title">ประกาศบริหารกองทุน<span>ปีงบประมาณ พ.ศ.2569</span></h1>
+            <p class="hero-lead">แนวทางศึกษาสิทธิประโยชน์ เงื่อนไขการเบิกจ่าย และโอกาสการ Claim รายได้</p>
+
+            <ul class="hero-steps" aria-label="หลักการ">
+              <li><i class="bi bi-people-fill" aria-hidden="true"></i>รู้กลุ่มเป้าหมาย</li>
+              <li><i class="bi bi-list-check" aria-hidden="true"></i>รู้เงื่อนไข</li>
+              <li><i class="bi bi-cash-coin" aria-hidden="true"></i>รู้เงินที่จะได้รับ</li>
+              <li class="is-final"><i class="bi bi-check2-circle" aria-hidden="true"></i>Claim ได้อย่างถูกต้อง</li>
+            </ul>
+
+            <p class="hero-quote">“จากประกาศ <strong data-bind="announcements">76</strong> ฉบับ<br>สู่แผนที่รายได้ของโรงพยาบาล”</p>
+
+            <div class="hero-cta">
+              <button class="btn btn-primary" type="button" data-scroll-to="abc-overview"><i class="bi bi-diagram-3" aria-hidden="true"></i> สำรวจโครงสร้างกองทุน</button>
+              <button class="btn btn-ghost" type="button" data-focus-search><i class="bi bi-search" aria-hidden="true"></i> ค้นหารายการ Claim</button>
+            </div>
+          </div>
+
+          <div class="hero-ladder" aria-labelledby="ladderTitle">
+            <div class="ladder-head">
+              <span id="ladderTitle"><i class="bi bi-bezier2" aria-hidden="true"></i> โครงสร้างข้อมูลกองทุน</span>
+              <span class="ladder-tag">Revenue Master</span>
+            </div>
+            <ol class="ladder" id="fundLadder"></ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXECUTIVE KPI -->
+      <section class="section" id="executive-kpi" aria-labelledby="kpiTitle">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Executive Dashboard</p>
+              <h2 id="kpiTitle">ภาพรวมกองทุน</h2>
+              <p class="section-desc">1 กองทุน → 3 หมวดใหญ่ → 18 กลุ่มที่มีประกาศ → 76 ประกาศ → Program → Service Item → Claim Rule</p>
+            </div>
+            <div id="structureCheck"></div>
+          </div>
+
+          <div class="kpi-grid kpi-primary" id="kpiPrimary"></div>
+          <div class="cat-split" id="kpiCategories"></div>
+
+          <div class="subhead">
+            <h3>ตัวชี้วัดจาก Revenue Master</h3>
+            <span id="kpiDataStatus"></span>
+          </div>
+          <div class="kpi-grid kpi-data" id="kpiData"></div>
+
+          <p class="source-line" id="kpiSource"></p>
+        </div>
+      </section>
+
+      <!-- A / B / C OVERVIEW -->
+      <section class="section section-alt" id="abc-overview" aria-labelledby="abcTitle">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">A / B / C Overview</p>
+              <h2 id="abcTitle">3 หมวดใหญ่ · 18 กลุ่มที่มีประกาศ</h2>
+              <p class="section-desc">A = ภายใต้งบเหมาจ่ายรายหัว · B = นอกงบเหมาจ่ายรายหัว · C = เกี่ยวข้องมากกว่า 1 งบ / อื่น ๆ</p>
+            </div>
+          </div>
+
+          <div class="chart-grid">
+            <article class="card chart-card">
+              <header class="card-head">
+                <h3>สัดส่วนประกาศตามหมวด</h3>
+                <p>จำนวนประกาศทั้งหมด <span data-bind="announcements">76</span> ฉบับ</p>
+              </header>
+              <div class="donut-layout">
+                <div class="chart-box donut-box" id="donutBox">
+                  <canvas id="chartCategory" role="img"></canvas>
+                  <div class="donut-center" aria-hidden="true"><strong data-bind="announcements">76</strong><span>ประกาศ</span></div>
+                </div>
+                <ul class="legend legend-values" id="legendCategory"></ul>
+              </div>
+            </article>
+
+            <article class="card chart-card">
+              <header class="card-head card-head-row">
+                <div>
+                  <h3>จำนวนประกาศต่อกลุ่ม</h3>
+                  <p>18 กลุ่มที่มีประกาศ · คลิกแท่งเพื่อดูกลุ่ม</p>
+                </div>
+                <ul class="legend" id="legendGroup"></ul>
+              </header>
+              <div class="chart-box bar-box" id="barBox">
+                <canvas id="chartGroup" role="img"></canvas>
+              </div>
+            </article>
+          </div>
+
+          <div class="cat-panels" id="categoryPanels"></div>
+        </div>
+      </section>
+
+      <!-- CLAIM GUIDE: 3 QUESTIONS -->
+      <section class="section" aria-labelledby="questionTitle">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Claim Guide</p>
+              <h2 id="questionTitle">3 คำถามที่ต้องตอบได้เร็วที่สุด</h2>
+              <p class="section-desc">ทุกหน้ารายละเอียดจะเรียงข้อมูลตามลำดับนี้เสมอ เพื่อให้ตัดสินใจ Claim ได้ทันที</p>
+            </div>
+          </div>
+
+          <div class="question-grid">
+            <article class="question">
+              <span class="question-no">1</span>
+              <i class="bi bi-people question-icon" aria-hidden="true"></i>
+              <h3>ใครคือกลุ่มเป้าหมาย</h3>
+              <p>ใครมีสิทธิ ใครเข้าเกณฑ์ เป็นผู้ป่วย OP/IP กลุ่มโรคหรือช่วงอายุใด</p>
+            </article>
+            <article class="question">
+              <span class="question-no">2</span>
+              <i class="bi bi-ui-checks question-icon" aria-hidden="true"></i>
+              <h3>ต้องมีเงื่อนไขอะไรจึง Claim ได้</h3>
+              <p>สิทธิ · Diagnosis / Procedure · รหัสบริการ · Authorization · เอกสาร · ระยะเวลา</p>
+            </article>
+            <article class="question">
+              <span class="question-no">3</span>
+              <i class="bi bi-wallet2 question-icon" aria-hidden="true"></i>
+              <h3>ครบเงื่อนไขแล้ว ได้เงินเท่าไร / จ่ายแบบใด</h3>
+              <p>Payment Method · อัตราจ่าย · หน่วย · เพดาน · ระบบ Claim ที่ต้องส่ง</p>
+            </article>
+          </div>
+
+          <div class="card flow-card">
+            <h3>เส้นทางการค้นหาข้อมูล (User Flow)</h3>
+            <ol class="flow">
+              <li>หมวด</li>
+              <li>กลุ่ม</li>
+              <li>Program</li>
+              <li>รายการบริการ</li>
+              <li class="is-key">กลุ่มเป้าหมาย</li>
+              <li class="is-key">เงื่อนไข</li>
+              <li class="is-key">เงินที่จะได้รับ</li>
+              <li>ระบบ Claim</li>
+              <li>รายละเอียดเทคนิค</li>
+            </ol>
+          </div>
+
+          <div class="role-grid">
+            <div class="role"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i><div><h4>Executive Dashboard</h4><p>ผู้บริหารดูภาพรวมกองทุน</p></div></div>
+            <div class="role"><i class="bi bi-book" aria-hidden="true"></i><div><h4>Knowledge Dashboard</h4><p>เจ้าหน้าที่ศึกษาหลักเกณฑ์และเงื่อนไข</p></div></div>
+            <div class="role"><i class="bi bi-signpost-split" aria-hidden="true"></i><div><h4>Claim Guide</h4><p>ค้นว่ารายการใด Claim ได้ ต้องเตรียมอะไร</p></div></div>
+            <div class="role"><i class="bi bi-map" aria-hidden="true"></i><div><h4>Revenue Opportunity Map</h4><p>รองรับระบบตรวจสอบรายได้ตกหล่นในอนาคต</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KEY MESSAGE -->
+      <section class="key-band" aria-label="ข้อความสำคัญ">
+        <div class="container key-inner">
+          <p class="key-title">รู้สิทธิ รู้บริการ รู้เงื่อนไข<span>Claim ครบ ถูกต้อง ทันเวลา</span></p>
+          <p class="key-sub">“ทุกบริการที่เกิดขึ้น ควรถูกตรวจสอบว่า สามารถเปลี่ยนเป็นรายได้ที่พึงได้รับได้หรือไม่”</p>
+          <ol class="goal-chain" aria-label="เป้าหมายสุดท้าย">
+            <li>ประกาศ</li>
+            <li>ความรู้</li>
+            <li>การปฏิบัติ</li>
+            <li>Claim ครบ</li>
+            <li>รับเงินครบ</li>
+            <li class="is-final">ลด Revenue Leakage</li>
+          </ol>
+        </div>
+      </section>
+    </section>
+
+    <!-- ===== VIEW shells: เนื้อหาสร้างโดย app.js / โมดูล Phase ถัดไป ===== -->
+    <section class="view" id="view-cat-a" data-view="cat-a" hidden></section>
+    <section class="view" id="view-cat-b" data-view="cat-b" hidden></section>
+    <section class="view" id="view-cat-c" data-view="cat-c" hidden></section>
+    <section class="view" id="view-catalog" data-view="catalog" hidden></section>
+    <section class="view" id="view-codes" data-view="codes" hidden></section>
+    <section class="view" id="view-payment" data-view="payment" hidden></section>
+    <section class="view" id="view-claim-system" data-view="claim-system" hidden></section>
+    <section class="view" id="view-departments" data-view="departments" hidden></section>
+    <section class="view" id="view-who-claims" data-view="who-claims" hidden></section>
+    <section class="view" id="view-readiness" data-view="readiness" hidden></section>
+    <section class="view" id="view-search" data-view="search" hidden></section>
+    <section class="view" id="view-sources" data-view="sources" hidden></section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="app-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>ประกาศบริหารกองทุน ปีงบประมาณ พ.ศ.2569</strong>
+        <span>พัฒนาโดย ศูนย์รายได้ โรงพยาบาลแม่สะเรียง</span>
+      </div>
+      <p class="footer-disclaimer">
+        <i class="bi bi-info-circle" aria-hidden="true"></i>
+        <span>Dashboard นี้เป็นเครื่องมือช่วยศึกษาและบริหารจัดการ ไม่ใช้แทนประกาศและหลักเกณฑ์ฉบับทางการ โปรดตรวจสอบประกาศฉบับล่าสุดก่อนดำเนินการ Claim</span>
+      </p>
+      <div class="footer-meta">
+        <span class="pill"><i class="bi bi-eye" aria-hidden="true"></i> Public Read-only</span>
+        <span class="pill"><i class="bi bi-shield-lock" aria-hidden="true"></i> ไม่มีข้อมูลรายบุคคลผู้ป่วย</span>
+        <code class="version" data-bind="version"></code>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
