@@ -101,6 +101,7 @@ main:focus { outline: none; }
 /* ผู้พัฒนา + version ต่อท้ายชื่อระบบ */
 .brand-row { display: flex; align-items: baseline; gap: 14px; min-width: 0; }
 .brand-row .brand-title { flex: 0 0 auto; }
+.brand-tag { margin-left: 4px; font-size: 12.5px; font-weight: 400; color: rgba(255, 255, 255, .72); letter-spacing: .01em; }
 .brand-dev {
   display: inline-flex; align-items: baseline; gap: 10px;
   min-width: 0; flex: 0 1 auto;
@@ -117,7 +118,11 @@ main:focus { outline: none; }
   letter-spacing: .02em;
   color: var(--cyan-light);
 }
-@media (max-width: 1180px) { .brand-dev-version { display: none; } }
+/* ความกว้างไม่พอ: ซ่อน version → คำว่า "พัฒนาโดย" → ทั้งบรรทัด (ยังมีใน Footer) — ไม่ตัดชื่อหน่วยงาน */
+.header-inner .header-search { flex-basis: 260px; }
+@media (max-width: 1280px) { .brand-dev-version { display: none; } }
+@media (max-width: 1180px) { .brand-dev-by { display: none; } .header-inner .header-search { flex-basis: 220px; } }
+@media (max-width: 1100px) { .brand-dev { display: none; } }
 
 .header-search { position: relative; flex: 0 1 380px; display: flex; align-items: center; }
 .header-search > i { position: absolute; left: 14px; color: rgba(255, 255, 255, .55); pointer-events: none; }
@@ -631,11 +636,13 @@ main:focus { outline: none; }
   .header-search, .tabbar, .brand-sub { display: none; }
   .icon-btn { display: grid; }
   .brand-mark { width: 36px; height: 36px; font-size: 18px; }
-  .brand-row { flex-direction: column; align-items: flex-start; gap: 3px; }
+  /* มือถือ 3 บรรทัด: ชื่อระบบ · (version web-dashboard demo) · หน่วยงาน */
+  .brand-row { flex-direction: column; align-items: flex-start; gap: 1px; }
   .brand-row .brand-title { flex: none; max-width: 100%; }
-  .brand-title { font-size: 15px; line-height: 1.25; }
+  .brand-title { font-size: 15px; line-height: 1.2; white-space: normal; }
   .brand-year { font-size: 13px; }
-  .brand-dev { max-width: 100%; padding-left: 0; border-left: 0; font-size: 11px; }
+  .brand-tag { display: block; margin: 0; font-size: 10.5px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand-dev { display: inline-flex; max-width: 100%; padding-left: 0; border-left: 0; font-size: 10.5px; line-height: 1.25; }
   .brand-dev-by { display: none; }
   .section { padding: 40px 0; }
   .section-tight { padding-top: 20px; }
