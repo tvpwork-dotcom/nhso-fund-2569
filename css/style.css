@@ -341,6 +341,42 @@ main:focus { outline: none; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .hero-lead { margin-top: 14px; max-width: 40em; font-size: clamp(15px, 1.6vw, 18px); font-weight: 300; color: rgba(255, 255, 255, .8); }
+/* แหล่งอ้างอิง + ดาวน์โหลดประกาศฉบับเต็ม */
+.hero-source {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 18px; max-width: 44em; padding: 14px 14px 14px 16px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(103, 232, 249, .35);
+  border-left: 4px solid var(--cyan);
+}
+.hero-source-icon {
+  display: grid; place-items: center; flex: 0 0 auto;
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(6, 182, 212, .16); color: var(--cyan-light); font-size: 20px;
+}
+.hero-source-text { display: flex; flex-direction: column; min-width: 0; flex: 1 1 auto; font-size: 13.5px; line-height: 1.5; color: rgba(255, 255, 255, .78); }
+.hero-source-label { font-size: 12px; font-weight: 500; letter-spacing: .04em; color: var(--cyan-light); }
+.hero-source-text strong { font-size: 15px; font-weight: 600; color: #fff; }
+.hero-source-btn {
+  display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  background: #fff; color: var(--navy); text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.hero-source-btn > i { font-size: 26px; color: #DC2626; }
+.hero-source-btn span { display: flex; flex-direction: column; line-height: 1.25; }
+.hero-source-btn b { font-size: 14px; font-weight: 600; }
+.hero-source-btn small { font-size: 11.5px; color: var(--muted); }
+.hero-source-btn:hover { transform: translateY(-1px); background: #ECFEFF; box-shadow: 0 10px 24px rgba(0, 0, 0, .3); }
+.hero-source-btn:focus-visible { outline: 3px solid var(--cyan-light); outline-offset: 2px; }
+@media (max-width: 767px) {
+  .hero-source { flex-wrap: wrap; }
+  .hero-source-text { flex-basis: calc(100% - 54px); }
+  .hero-source-btn { width: 100%; justify-content: center; }
+}
+
 .hero-steps { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .hero-steps li {
   display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: var(--radius-sm);
