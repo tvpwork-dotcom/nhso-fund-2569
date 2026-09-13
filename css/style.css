@@ -1,5 +1,5 @@
 /* =========================================================
- * style.css — ประกาศบริหารกองทุน ปีงบประมาณ พ.ศ.2569
+ * style.css — หลักเกณฑ์กองทุน สปสช.ปี2569
  * Design tokens · Base · Layout · Components · Views · Responsive
  * ========================================================= */
 
@@ -97,6 +97,27 @@ main:focus { outline: none; }
 .brand-title { font-size: 16px; font-weight: 600; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .brand-year { color: var(--cyan-light); font-weight: 500; }
 .brand-sub { font-size: 12px; font-weight: 300; line-height: 1.4; color: rgba(255, 255, 255, .64); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ผู้พัฒนา + version ต่อท้ายชื่อระบบ */
+.brand-row { display: flex; align-items: baseline; gap: 14px; min-width: 0; }
+.brand-row .brand-title { flex: 0 0 auto; }
+.brand-dev {
+  display: inline-flex; align-items: baseline; gap: 10px;
+  min-width: 0; flex: 0 1 auto;
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, .24);
+  font-size: 12.5px; font-weight: 300; line-height: 1.35; white-space: nowrap;
+  color: rgba(255, 255, 255, .66);
+}
+.brand-dev-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.brand-dev-text strong { font-weight: 500; color: rgba(255, 255, 255, .92); }
+.brand-dev-version {
+  flex: 0 0 auto;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 11.5px; font-weight: 400;
+  letter-spacing: .02em;
+  color: var(--cyan-light);
+}
+@media (max-width: 1180px) { .brand-dev-version { display: none; } }
 
 .header-search { position: relative; flex: 0 1 380px; display: flex; align-items: center; }
 .header-search > i { position: absolute; left: 14px; color: rgba(255, 255, 255, .55); pointer-events: none; }
@@ -610,8 +631,12 @@ main:focus { outline: none; }
   .header-search, .tabbar, .brand-sub { display: none; }
   .icon-btn { display: grid; }
   .brand-mark { width: 36px; height: 36px; font-size: 18px; }
-  .brand-title { font-size: 15px; white-space: normal; }
-  .brand-year { display: block; font-size: 12px; }
+  .brand-row { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .brand-row .brand-title { flex: none; max-width: 100%; }
+  .brand-title { font-size: 15px; line-height: 1.25; }
+  .brand-year { font-size: 13px; }
+  .brand-dev { max-width: 100%; padding-left: 0; border-left: 0; font-size: 11px; }
+  .brand-dev-by { display: none; }
   .section { padding: 40px 0; }
   .section-tight { padding-top: 20px; }
   .hero-inner { padding-top: 36px; padding-bottom: 44px; }
